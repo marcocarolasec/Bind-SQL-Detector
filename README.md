@@ -1,5 +1,3 @@
-# Bind-SQL-Detector
-Tool for detecting time-based SQL injections
 # SQL Injection Time-Based Detector
 
 This is a Python script that detects potential time-based SQL injections in a web application. The tool sends HTTP requests with different payloads and analyzes the response time to determine potential vulnerabilities.
