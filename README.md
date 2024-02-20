@@ -28,7 +28,7 @@ python3 sqli.py <URL> [options]
 
 ### Example Usage
 python3 sqli.py "http://example.com/login" --get "username=admin" "password=pass123" --cookie "sessionid=abc123" --proxy "http://127.0.0.1:8080"
-
+![2024-02-20 13_21_47-kali-linux-2023 4-vmware-amd64 - VMware Workstation](https://github.com/marcocarolasec/Bind-SQL-Detector/assets/58811847/22c23ca8-a71c-4012-b753-3a85afc528b0)
 
 
 ## Contributing
@@ -42,6 +42,7 @@ This project was inspired by the need to enhance security in web applications.
 ## License
 
 This project is licensed under the Open Source License by MarcoCarolaSec.
+
 
 
 
