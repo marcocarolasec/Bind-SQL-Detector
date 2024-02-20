@@ -11,7 +11,7 @@ COLOR_SUCCESS = Fore.GREEN
 COLOR_ERROR = Fore.RED
 COLOR_INFO = Fore.CYAN
 
-def check_sqli_time_based(url, params, cookies, proxy, payload_file):
+def check_sqli_time_based(url, method, params, cookies, proxy, payload_file):
     with open(payload_file, 'r') as f:
         payloads = f.readlines()
 
@@ -21,7 +21,14 @@ def check_sqli_time_based(url, params, cookies, proxy, payload_file):
             params[param_name] = payload
             try:
                 start_time = time.time()
-                response = requests.get(url, params=params, cookies=cookies, proxies=proxy)
+                if method == 'GET':
+                    response = requests.get(url, params=params, cookies=cookies, proxies=proxy)
+                elif method == 'POST':
+                    response = requests.post(url, data=params, cookies=cookies, proxies=proxy)
+                else:
+                    print(f"{COLOR_ERROR}[-] Invalid HTTP method specified.")
+                    return
+                
                 end_time = time.time()
                 response_time = end_time - start_time
 
@@ -49,13 +56,16 @@ def main():
     cookies = {}
     proxy = None
 
-    for param in args.get:
-        key, value = param.split('=')
-        params[key] = value
-
-    for param in args.post:
-        key, value = param.split('=')
-        params[key] = value
+    if args.get:
+        method = 'GET'
+        for param in args.get:
+            key, value = param.split('=')
+            params[key] = value
+    elif args.post:
+        method = 'POST'
+        for param in args.post:
+            key, value = param.split('=')
+            params[key] = value
 
     for cookie in args.cookie:
         key, value = cookie.split('=')
@@ -64,7 +74,7 @@ def main():
     if args.proxy:
         proxy = {'http': args.proxy, 'https': args.proxy}
 
-    check_sqli_time_based(url, params, cookies, proxy, args.payload_file)
+    check_sqli_time_based(url, method, params, cookies, proxy, args.payload_file)
 
 if __name__ == "__main__":
     main()
